@@ -1,0 +1,7 @@
+string status
+string motor_encoder_offset
+string pwm_linearity
+string closed_loop1
+string closed_loop2
+string encoder_calibration
+string errors

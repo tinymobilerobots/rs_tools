@@ -1,0 +1,12 @@
+analyzers:
+  first:
+    expected : ['changing_node: Changing node']
+    type: GenericAnalyzer
+    path: firstP
+    
+       
+  second:
+    expected : ['stale_Node: Stale Node']
+    type: GenericAnalyzer
+    path: secondP
+    allow_stale: true
