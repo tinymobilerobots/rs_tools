@@ -26,6 +26,12 @@ sudo apt install -y libbondcpp-dev
 
 sudo apt-get -y install libtinyxml-dev
 
+sudo apt -y install libqt5svg5-dev
+
+sudo apt -y install libqt5websockets5-dev
+
+sudo apt -y install libqt5x11extras5-dev
+
 sudo apt-get -y install python3-dev
 
 sudo apt install -y qtbase5-dev qt5-qmake
@@ -34,9 +40,15 @@ sudo apt-get -y install sip-dev pyqt5-dev pyqt5-dev-tools
 
 sudo apt-get -y install libtf2-bullet-dev
 
+sudo apt install -y python3-numpy
+
+sudo sed -i -e 's/STD_SHARED_MUTEX_FOUND 1/STD_SHARED_MUTEX_FOUND 0/g' /usr/include/log4cxx/boost-std-configuration.h
+
+sudo sed -i -e 's/Boost_SHARED_MUTEX_FOUND 0/Boost_SHARED_MUTEX_FOUND 1/g' /usr/include/log4cxx/boost-std-configuration.h
+
 echo "Building tools"
 
-catkin_make
+catkin_make -DCATKIN_ENABLE_TESTING=0
 
 source ~/new_toolbox/devel/setup.zsh
 
