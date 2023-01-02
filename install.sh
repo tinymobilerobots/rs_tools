@@ -46,11 +46,13 @@ sudo apt-get -y install libtf2-bullet-dev
 
 sudo apt install -y python3-numpy
 
+sudo apt-get -y install libangles-dev
+
 sudo apt install -y mosquitto
 
 sudo snap install mosquitto 
 
-sudo apt-get install filezilla
+sudo apt-get install -y filezilla
 
 sudo rosdep update
 
