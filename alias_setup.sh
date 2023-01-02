@@ -56,7 +56,7 @@ ping -D -O tinybox$1;
 
 gnome-terminal -- bash -c "source ~/rs_tools/devel/setup.sh; rosrun rqt_reconfigure rqt_reconfigure;"
 ,ros;
-,monitor;
+rosrun rqt_robot_monitor rqt_robot_monitor;
 }
 
 
