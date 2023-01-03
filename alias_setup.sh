@@ -4,7 +4,18 @@ echo "Setting up aliases"
 
 alias ,ros="source ~/rs_tools/devel/setup.sh"
 
-alias ,rosip=":"
+,rosip()
+
+{
+
+  if [ -z "$1" ]
+  then
+    echo "Please supply robot number as first argument";
+    return 1;
+  fi
+
+  export ROS_IP= ifconfig tun0 | awk '/inet addr/ {gsub("addr:", "", $2); print $2}'
+}
 
 ,ts()
 
