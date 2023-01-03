@@ -311,8 +311,19 @@ int main(int argc, char* argv[])
                                   "Set the window title",
                                   "window_title");
   parser.addOption(window_title);
+
+  QCommandLineOption topic_list(QStringList() << "topic_list",
+                                  "Preselect and load topics in the "
+                                  "comma separated list",
+                                  "topic_list");
+  parser.addOption(topic_list);
   
   parser.process(*qApp);
+  
+  if (parser.isSet(topic_list))
+  {
+    settings.setValue("DataStreamROS/default_topics", parser.value(topic_list).split(",", QString::SkipEmptyParts));
+  }
 
   if (parser.isSet(publish_option) && !parser.isSet(layout_option))
   {

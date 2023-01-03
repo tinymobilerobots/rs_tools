@@ -87,6 +87,8 @@ alias ,console=",ros; rosrun rqt_console rqt_console"
 
 alias ,plot=",ros; rosrun rqt_plot rqt_plot"
 
+alias ,plot_juggler=",ros; rosrun plotjuggler plotjuggler"
+
 # Plot juggler aliases ?
 
 alias ,dp,list=",ros; rosrun dynamic_reconfigure dynparam list"
@@ -99,11 +101,11 @@ alias ,plot,angular_velocity=",plot /platform/roboteq/wheel_odometry/twist/twist
 
 # Use plot juggler
 
-alias ,plot,pump=""
+alias ,plot,pump=",plot_juggler --layout $(eval rospack find plotjuggler_ros)/config/pump_layout.xml --topic_list '/tool/pump_command,/tool/pump_current'"
 
 # Only for roboteq
 
-alias ,plot,encoder=""
+alias ,plot,encoder=",plot_juggler --layout $(eval rospack find plotjuggler_ros)/config/pump_layout.xml --topic_list '/platform/roboteq/channel_encoders_lr'"
 
 ,filezille()
 
