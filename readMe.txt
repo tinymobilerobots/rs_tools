@@ -1,7 +1,10 @@
 =============================INSTALLATION===============================
 
-1 run cd "~/new_toolbox" 
-2 run the instalation script bash ./setup.sh
+1 install git "sudo apt install git"
+2 clone this repository in the home dir
+3 run cd rs_tools
+4 run the instalation script "bash ./install.sh"
+5 run the alias setup script "bash ./alias_setup.sh"
 
 ================================USE=====================================
 
